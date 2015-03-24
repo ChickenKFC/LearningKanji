@@ -1,1 +1,22 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="kanjidb" Class="kanjidbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=TRAUDAICA-PC;Initial Catalog=kanjidb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="kanjidbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.KANJI_TBL" Member="KANJI_TBLs">
+    <Type Name="KANJI_TBL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VOCABULARY" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="HIRAGANA" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CHINESE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="VIETNAMESE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LESSION_ID" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KATAKANA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LESSION_TBL" Member="LESSION_TBLs">
+    <Type Name="LESSION_TBL">
+      <Column Name="LESSION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LESSION_NAME" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="KANJI_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

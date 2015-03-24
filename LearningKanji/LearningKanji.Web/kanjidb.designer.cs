@@ -22,6 +22,7 @@ namespace LearningKanji.Web
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="kanjidb")]
 	public partial class kanjidbDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,16 @@ namespace LearningKanji.Web
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertKANJI_TBL(KANJI_TBL instance);
+    partial void UpdateKANJI_TBL(KANJI_TBL instance);
+    partial void DeleteKANJI_TBL(KANJI_TBL instance);
     #endregion
+		
+		public kanjidbDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["kanjidbConnectionString"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public kanjidbDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +63,315 @@ namespace LearningKanji.Web
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<KANJI_TBL> KANJI_TBLs
+		{
+			get
+			{
+				return this.GetTable<KANJI_TBL>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LESSION_TBL> LESSION_TBLs
+		{
+			get
+			{
+				return this.GetTable<LESSION_TBL>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KANJI_TBL")]
+	public partial class KANJI_TBL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _VOCABULARY;
+		
+		private string _HIRAGANA;
+		
+		private string _CHINESE;
+		
+		private string _VIETNAMESE;
+		
+		private string _LESSION_ID;
+		
+		private int _STT;
+		
+		private int _KATAKANA;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnVOCABULARYChanging(string value);
+    partial void OnVOCABULARYChanged();
+    partial void OnHIRAGANAChanging(string value);
+    partial void OnHIRAGANAChanged();
+    partial void OnCHINESEChanging(string value);
+    partial void OnCHINESEChanged();
+    partial void OnVIETNAMESEChanging(string value);
+    partial void OnVIETNAMESEChanged();
+    partial void OnLESSION_IDChanging(string value);
+    partial void OnLESSION_IDChanged();
+    partial void OnSTTChanging(int value);
+    partial void OnSTTChanged();
+    partial void OnKATAKANAChanging(int value);
+    partial void OnKATAKANAChanged();
+    #endregion
+		
+		public KANJI_TBL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VOCABULARY", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string VOCABULARY
+		{
+			get
+			{
+				return this._VOCABULARY;
+			}
+			set
+			{
+				if ((this._VOCABULARY != value))
+				{
+					this.OnVOCABULARYChanging(value);
+					this.SendPropertyChanging();
+					this._VOCABULARY = value;
+					this.SendPropertyChanged("VOCABULARY");
+					this.OnVOCABULARYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HIRAGANA", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string HIRAGANA
+		{
+			get
+			{
+				return this._HIRAGANA;
+			}
+			set
+			{
+				if ((this._HIRAGANA != value))
+				{
+					this.OnHIRAGANAChanging(value);
+					this.SendPropertyChanging();
+					this._HIRAGANA = value;
+					this.SendPropertyChanged("HIRAGANA");
+					this.OnHIRAGANAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHINESE", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string CHINESE
+		{
+			get
+			{
+				return this._CHINESE;
+			}
+			set
+			{
+				if ((this._CHINESE != value))
+				{
+					this.OnCHINESEChanging(value);
+					this.SendPropertyChanging();
+					this._CHINESE = value;
+					this.SendPropertyChanged("CHINESE");
+					this.OnCHINESEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VIETNAMESE", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string VIETNAMESE
+		{
+			get
+			{
+				return this._VIETNAMESE;
+			}
+			set
+			{
+				if ((this._VIETNAMESE != value))
+				{
+					this.OnVIETNAMESEChanging(value);
+					this.SendPropertyChanging();
+					this._VIETNAMESE = value;
+					this.SendPropertyChanged("VIETNAMESE");
+					this.OnVIETNAMESEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LESSION_ID", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string LESSION_ID
+		{
+			get
+			{
+				return this._LESSION_ID;
+			}
+			set
+			{
+				if ((this._LESSION_ID != value))
+				{
+					this.OnLESSION_IDChanging(value);
+					this.SendPropertyChanging();
+					this._LESSION_ID = value;
+					this.SendPropertyChanged("LESSION_ID");
+					this.OnLESSION_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Int NOT NULL")]
+		public int STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this.OnSTTChanging(value);
+					this.SendPropertyChanging();
+					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KATAKANA", DbType="Int NOT NULL")]
+		public int KATAKANA
+		{
+			get
+			{
+				return this._KATAKANA;
+			}
+			set
+			{
+				if ((this._KATAKANA != value))
+				{
+					this.OnKATAKANAChanging(value);
+					this.SendPropertyChanging();
+					this._KATAKANA = value;
+					this.SendPropertyChanged("KATAKANA");
+					this.OnKATAKANAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LESSION_TBL")]
+	public partial class LESSION_TBL
+	{
+		
+		private System.Nullable<int> _LESSION_ID;
+		
+		private string _LESSION_NAME;
+		
+		private System.Nullable<int> _KANJI_COUNT;
+		
+		public LESSION_TBL()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LESSION_ID", DbType="Int")]
+		public System.Nullable<int> LESSION_ID
+		{
+			get
+			{
+				return this._LESSION_ID;
+			}
+			set
+			{
+				if ((this._LESSION_ID != value))
+				{
+					this._LESSION_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LESSION_NAME", DbType="VarChar(MAX)")]
+		public string LESSION_NAME
+		{
+			get
+			{
+				return this._LESSION_NAME;
+			}
+			set
+			{
+				if ((this._LESSION_NAME != value))
+				{
+					this._LESSION_NAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KANJI_COUNT", DbType="Int")]
+		public System.Nullable<int> KANJI_COUNT
+		{
+			get
+			{
+				return this._KANJI_COUNT;
+			}
+			set
+			{
+				if ((this._KANJI_COUNT != value))
+				{
+					this._KANJI_COUNT = value;
+				}
+			}
 		}
 	}
 }

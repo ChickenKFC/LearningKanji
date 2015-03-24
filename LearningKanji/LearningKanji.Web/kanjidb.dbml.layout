@@ -1,1 +1,18 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="kanjidb">
+  <DataContextMoniker Name="/kanjidbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8b29a7a5-1d47-44d0-b7f8-eabf7e82f7fb" absoluteBounds="3.375, 1.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/kanjidbDataContext/KANJI_TBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fe60d33-a792-45c5-b017-6db511014c26" absoluteBounds="3.3899999999999997, 1.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="269a2cae-b22b-41b3-8b12-0761c537cd5e" absoluteBounds="6.125, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/kanjidbDataContext/LESSION_TBL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40269646-09ec-4299-bc20-ae1d85603c5d" absoluteBounds="6.14, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

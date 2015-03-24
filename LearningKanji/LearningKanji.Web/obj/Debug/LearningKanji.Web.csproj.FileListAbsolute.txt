@@ -4,3 +4,5 @@ E:\Silverlight\LearningKanji\trunk\LearningKanji\LearningKanji.Web\bin\LearningK
 E:\Silverlight\LearningKanji\trunk\LearningKanji\LearningKanji.Web\obj\Debug\LearningKanji.Web.dll
 E:\Silverlight\LearningKanji\trunk\LearningKanji\LearningKanji.Web\obj\Debug\LearningKanji.Web.pdb
 E:\Silverlight\LearningKanji\trunk\LearningKanji\LearningKanji.Web\obj\Debug\LearningKanji.Web.csprojResolveAssemblyReference.cache
+E:\Silverlight\LearningKanji\trunk\LearningKanji\LearningKanji.Web\bin\LearningKanji.dll
+E:\Silverlight\LearningKanji\trunk\LearningKanji\LearningKanji.Web\bin\LearningKanji.pdb

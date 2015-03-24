@@ -71,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IKanjiService.cs" />
+    <Compile Include="kanjidb.cs">
+      <DependentUpon>kanjidb.dbml</DependentUpon>
+    </Compile>
     <Compile Include="kanjidb.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,9 +101,15 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="kanjidb.dbml.layout">
+    <None Include="kanjidb.dbml.layout">
       <DependentUpon>kanjidb.dbml</DependentUpon>
-    </Content>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LearningKanji\LearningKanji.csproj">
+      <Project>{0765624a-4d7e-4e85-982b-b382965ef3f8}</Project>
+      <Name>LearningKanji</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
