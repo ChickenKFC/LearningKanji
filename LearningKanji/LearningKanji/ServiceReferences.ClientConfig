@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IKanjiService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="../KanjiService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IKanjiService" contract="ServiceReference1.IKanjiService"
+                name="BasicHttpBinding_IKanjiService" />
+        </client>
+    </system.serviceModel>
+</configuration>

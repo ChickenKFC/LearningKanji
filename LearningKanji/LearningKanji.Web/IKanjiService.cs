@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using LearningKanji.Classes.KanjiObject;
 
 namespace LearningKanji.Web
 {
@@ -14,6 +13,10 @@ namespace LearningKanji.Web
     public interface IKanjiService
     {
         [OperationContract]
-        List<KanjiObject> GetListKanji();
+        List<KanjiObj> GetListKanji();
+
+
+        [OperationContract]
+        Dictionary<int, string> GetLessionName();
     }
 }

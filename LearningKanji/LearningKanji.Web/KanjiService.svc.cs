@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using LearningKanji.Classes.KanjiObject;
 
 namespace LearningKanji.Web
 {
@@ -12,20 +11,34 @@ namespace LearningKanji.Web
     // NOTE: In order to launch WCF Test Client for testing this service, please select KanjiService.svc or KanjiService.svc.cs at the Solution Explorer and start debugging.
     public class KanjiService : IKanjiService
     {
-        public List<KanjiObject> GetListKanji()
+        public List<KanjiObj> GetListKanji()
         {
-            List<KanjiObject> lstKanji = new List<KanjiObject>();
+            List<KanjiObj> lstKanji = new List<KanjiObj>();
             kanjidbDataContext dbConnection = new kanjidbDataContext();
             var result = from kanji in dbConnection.KANJI_TBLs select kanji;
-
             foreach (var kj in result)
             {
-                KanjiObject eKanji = new KanjiObject((int)kj.ID, (string)kj.VOCABULARY, (string)kj.HIRAGANA,
+                KanjiObj eKanji = new KanjiObj((int)kj.ID, (string)kj.VOCABULARY, (string)kj.HIRAGANA,
                                             (string)kj.CHINESE, (string)kj.VIETNAMESE, (string)kj.LESSION_ID, (int)kj.STT);
                 lstKanji.Add(eKanji);
             }
 
             return lstKanji;
+        }
+
+        public Dictionary<int, string> GetLessionName()
+        {
+            Dictionary<int, string> lessionManager = new Dictionary<int,string>();
+            kanjidbDataContext dbConnection = new kanjidbDataContext();
+
+            // Query database
+            var strResult = from kanji in dbConnection.LESSION_TBLs select kanji;
+            foreach (var lession in strResult)
+            {
+                lessionManager.Add((int)lession.LESSION_ID, lession.LESSION_NAME.ToString());
+            }
+            
+            return lessionManager;
         }
     }
 }

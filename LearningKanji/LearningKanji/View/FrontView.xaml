@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="LearningKanji.View.FrontView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <!-- Padding top space -->
+            <RowDefinition Height="0.5*"/>
+            
+            <!-- Lession name -->
+            <RowDefinition Height="1*"/>
+
+            <!-- Kanji Display -->
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/LearningKanji;component/Images/background.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+    <!-- Lession Learning -->
+        <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+            <TextBlock x:Name="lblLessionName" FontFamily="MS UI Gothic" FontWeight="SemiBold"
+                     Foreground="Red" Text="第一課"/>
+        </Viewbox>
+
+        <Grid  Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            
+            <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+                <TextBox x:Name="txtCharacters" FontFamily="MS UI Gothic" FontWeight="SemiBold" BorderBrush="Transparent" BorderThickness="0"
+                     Foreground="Purple" Text="一生懸命" Background="Transparent" IsReadOnly="True"/>
+            </Viewbox>
+        </Grid>
+        
+    </Grid>
+</UserControl>

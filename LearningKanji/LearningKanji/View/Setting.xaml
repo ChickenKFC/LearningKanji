@@ -1,0 +1,74 @@
+﻿<controls:ChildWindow x:Class="LearningKanji.View.Setting"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="376.94" Height="189.806" 
+           Title="Setting">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+        <Grid x:Name="LayoutItem" Margin="2,2,2,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="38*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45*"/>
+                <ColumnDefinition Width="68*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="txtBlockLession" Width ="77"  Height="30"
+                   Text="Lession" Margin="10,10,0,0" VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   FontSize="16" FontFamily="Verdana" FontWeight="Bold" 
+                   Grid.Row ="0" Grid.Column="0" Grid.RowSpan="2"/>
+
+            <ComboBox Margin="10,7,10,10" Name="cmbLession"  Grid.Row ="0" Grid.Column="1">
+                
+            </ComboBox>
+
+            <TextBlock x:Name="txtBlockMode" Width ="51"  Height="22"
+                   Text="Mode" Margin="10,10,0,0" VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   FontSize="16" FontFamily="Verdana" FontWeight="Bold" 
+                   Grid.Row ="1" Grid.Column="0"></TextBlock>
+
+            <RadioButton x:Name="radRandom"  Margin="116,10,4,10" GroupName="Mode" Background="Yellow"
+                          FontSize="14" FontFamily="Verdana" IsChecked ="True"
+                         Content="Random" Grid.Row ="1" Grid.Column="1">
+            </RadioButton>
+
+            <RadioButton x:Name="radOrder"  Margin="10,10,137,10" GroupName="Mode" Background="Yellow"
+                         FontSize="14" FontFamily="Verdana"
+                         Content="Order" Grid.Row ="1" Grid.Column="1" 
+                         RenderTransformOrigin="0.329,-0.455">
+            </RadioButton>
+            
+            <TextBlock x:Name="txtBlockViewLession" Width ="120"  Height="23" Margin="10,10,0,0" VerticalAlignment="Top"
+            	HorizontalAlignment="Left"
+            	FontSize="16" FontFamily="Verdana" FontWeight="Bold" 
+            	Grid.Row ="2" Grid.Column="0">
+            	<Run Text="View Lession"/>
+            	<LineBreak/>
+            	<Run/>
+            </TextBlock>
+
+            <RadioButton x:Name="radTrue"  Margin="10,10,110,10" GroupName="ViewLession" Background="Yellow"
+                          FontSize="14" FontFamily="Verdana" IsChecked="True"
+                         Content="True" Grid.Row ="2" Grid.Column="1">
+            </RadioButton>
+
+            <RadioButton x:Name="radFalse"  Margin="116,12,31,8" GroupName="ViewLession" Background="Yellow"
+                         FontSize="14" FontFamily="Verdana"
+                         Content="Flase" Grid.Row ="2" Grid.Column="1" RenderTransformOrigin="0.329,-0.455">
+            </RadioButton>
+
+        </Grid>
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+    </Grid>
+</controls:ChildWindow>

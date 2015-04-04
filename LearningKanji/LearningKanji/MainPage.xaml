@@ -1,13 +1,75 @@
-﻿<UserControl x:Class="LearningKanji.MainPage"
+﻿<UserControl
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" x:Class="LearningKanji.MainPage"
+    xmlns:local="clr-namespace:LearningKanji.View"
     mc:Ignorable="d"
-    d:DesignHeight="300" d:DesignWidth="400">
+    d:DesignHeight="300" d:DesignWidth="400" Loaded="UserControl_Loaded">
 
-    <Grid x:Name="LayoutRoot" Background="White">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="168,110,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    <Grid x:Name="LayoutRoot" Margin="75,50,75,50">
+        <!-- Define rows and columns -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Display kanji screen and settings lession -->    
+        <Grid x:Name="showPannel" Grid.Row="0" MouseLeftButtonDown="showPannel_MouseLeftButtonDown">
+               
+        </Grid>
+       
+
+        <!-- Setting area -->
+        <Grid x:Name="ControlPannel" Grid.Row="1" Background="WhiteSmoke">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Go to first button -->
+                    <Viewbox Grid.Column="0">
+                        <Button x:Name="btnFirst" Style="{StaticResource MyButtonStyle}">
+                            <Image Source="Images/first.png" ToolTipService.ToolTip="First"/>
+                        </Button>
+                    </Viewbox>
+
+                    <!-- Go to first button -->
+                    <Viewbox Grid.Column="1">
+                        <Button x:Name="btnBackward" Style="{StaticResource MyButtonStyle}" Click="btnBackward_Click">
+                            <Image Source="Images/backward.png" ToolTipService.ToolTip="Previous"/>
+                        </Button>
+                    </Viewbox>
+
+                    <!-- Go to first button -->
+                    <Viewbox Grid.Column="2">
+                        <Button x:Name="btnSettings" Style="{StaticResource MyButtonStyle}" Click="btnSetting_Click">
+                            <Image Source="Images/settings.png" ToolTipService.ToolTip="Settings"/>
+                        </Button>
+                    </Viewbox>
+
+                    <!-- Go to first button -->
+                    <Viewbox Grid.Column="3">
+                        <Button x:Name="btnForward" Style="{StaticResource MyButtonStyle}" Click="btnForward_Click">
+                            <Image Source="Images/forward.png" ToolTipService.ToolTip="Next"/>
+                        </Button>
+                    </Viewbox>
+
+                    <!-- Go to first button -->
+                    <Viewbox Grid.Column="4">
+                        <Button x:Name="btnLast" Style="{StaticResource MyButtonStyle}">
+                            <Image Source="Images/last.png" ToolTipService.ToolTip="Last"/>
+                        </Button>
+                    </Viewbox>
+                </Grid>            
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </UserControl>

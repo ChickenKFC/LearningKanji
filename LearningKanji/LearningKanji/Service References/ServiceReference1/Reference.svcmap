@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6461bd08-fa3e-4548-a3a2-9378b0a3e172" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8489/KanjiService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KanjiService.xsd" MetadataType="Schema" ID="301052ef-5891-48e9-ac12-9cd527dbe81e" SourceId="1" SourceUrl="http://localhost:8489/KanjiService.svc?xsd=xsd2" />
+    <MetadataFile FileName="KanjiService1.xsd" MetadataType="Schema" ID="b648be26-7fb5-4064-9e73-c104144466cb" SourceId="1" SourceUrl="http://localhost:8489/KanjiService.svc?xsd=xsd0" />
+    <MetadataFile FileName="KanjiService2.xsd" MetadataType="Schema" ID="8a9fdc3a-9fd2-4a00-8d0a-0633d669b648" SourceId="1" SourceUrl="http://localhost:8489/KanjiService.svc?xsd=xsd1" />
+    <MetadataFile FileName="KanjiService.disco" MetadataType="Disco" ID="a6416b01-96cc-48ca-a428-09a816fbb81d" SourceId="1" SourceUrl="http://localhost:8489/KanjiService.svc?disco" />
+    <MetadataFile FileName="KanjiService.wsdl" MetadataType="Wsdl" ID="0eb9b629-65f0-4756-ba10-a46c3cac1c49" SourceId="1" SourceUrl="http://localhost:8489/KanjiService.svc?wsdl" />
+    <MetadataFile FileName="KanjiService1.wsdl" MetadataType="Wsdl" ID="a6742109-0db8-4aec-bafb-bb96fd53d9d3" SourceId="1" SourceUrl="http://localhost:8489/KanjiService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="KanjiService3.xsd" MetadataType="Schema" ID="7c41b26b-7c8c-46ec-9a8d-02bd61a97e6c" SourceId="1" SourceUrl="http://localhost:8489/KanjiService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

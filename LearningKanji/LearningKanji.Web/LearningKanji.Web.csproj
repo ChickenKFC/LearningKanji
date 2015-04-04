@@ -79,6 +79,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>kanjidb.dbml</DependentUpon>
     </Compile>
+    <Compile Include="KanjiObj.cs" />
     <Compile Include="KanjiService.svc.cs">
       <DependentUpon>KanjiService.svc</DependentUpon>
     </Compile>
@@ -104,12 +105,6 @@
     <None Include="kanjidb.dbml.layout">
       <DependentUpon>kanjidb.dbml</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LearningKanji\LearningKanji.csproj">
-      <Project>{0765624a-4d7e-4e85-982b-b382965ef3f8}</Project>
-      <Name>LearningKanji</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
