@@ -40,5 +40,19 @@ namespace LearningKanji.Web
             
             return lessionManager;
         }
+
+        public List<KanjiObj> GetListKanjiByLessionID(int lessionID)
+        {
+            List<KanjiObj> lstResult = new List<KanjiObj>();
+            kanjidbDataContext dbConnection = new kanjidbDataContext();
+            var lstKanji = from kanji in dbConnection.KANJI_TBLs where kanji.LESSION_ID == lessionID.ToString() select kanji;
+
+            foreach (var eRecord in lstKanji)
+            {
+                lstResult.Add(new KanjiObj((int)eRecord.ID, (string)eRecord.VOCABULARY, (string)eRecord.HIRAGANA,
+                                            (string)eRecord.CHINESE, (string)eRecord.VIETNAMESE, (string)eRecord.LESSION_ID, (int)eRecord.STT));
+            }
+            return lstResult;
+        }
     }
 }

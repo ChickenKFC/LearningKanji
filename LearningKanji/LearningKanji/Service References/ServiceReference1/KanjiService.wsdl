@@ -22,6 +22,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetListKanjiByLessionID">
+      <soap:operation soapAction="LearningKanji.Web/IKanjiService/GetListKanjiByLessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="KanjiService">
     <wsdl:port name="BasicHttpBinding_IKanjiService" binding="tns:BasicHttpBinding_IKanjiService">

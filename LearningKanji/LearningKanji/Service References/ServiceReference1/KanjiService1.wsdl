@@ -20,6 +20,12 @@
   <wsdl:message name="IKanjiService_GetLessionName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLessionNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IKanjiService_GetListKanjiByLessionID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListKanjiByLessionID" />
+  </wsdl:message>
+  <wsdl:message name="IKanjiService_GetListKanjiByLessionID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListKanjiByLessionIDResponse" />
+  </wsdl:message>
   <wsdl:portType name="IKanjiService">
     <wsdl:operation name="GetListKanji">
       <wsdl:input wsaw:Action="LearningKanji.Web/IKanjiService/GetListKanji" message="tns:IKanjiService_GetListKanji_InputMessage" />
@@ -28,6 +34,10 @@
     <wsdl:operation name="GetLessionName">
       <wsdl:input wsaw:Action="LearningKanji.Web/IKanjiService/GetLessionName" message="tns:IKanjiService_GetLessionName_InputMessage" />
       <wsdl:output wsaw:Action="LearningKanji.Web/IKanjiService/GetLessionNameResponse" message="tns:IKanjiService_GetLessionName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListKanjiByLessionID">
+      <wsdl:input wsaw:Action="LearningKanji.Web/IKanjiService/GetListKanjiByLessionID" message="tns:IKanjiService_GetListKanjiByLessionID_InputMessage" />
+      <wsdl:output wsaw:Action="LearningKanji.Web/IKanjiService/GetListKanjiByLessionIDResponse" message="tns:IKanjiService_GetListKanjiByLessionID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

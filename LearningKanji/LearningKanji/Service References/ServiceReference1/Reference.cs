@@ -163,6 +163,11 @@ namespace LearningKanji.ServiceReference1 {
         System.IAsyncResult BeginGetLessionName(System.AsyncCallback callback, object asyncState);
         
         System.Collections.Generic.Dictionary<int, string> EndGetLessionName(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="LearningKanji.Web/IKanjiService/GetListKanjiByLessionID", ReplyAction="LearningKanji.Web/IKanjiService/GetListKanjiByLessionIDResponse")]
+        System.IAsyncResult BeginGetListKanjiByLessionID(int lessionID, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.Generic.List<LearningKanji.ServiceReference1.KanjiObj> EndGetListKanjiByLessionID(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -209,6 +214,25 @@ namespace LearningKanji.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListKanjiByLessionIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListKanjiByLessionIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.Generic.List<LearningKanji.ServiceReference1.KanjiObj> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.Generic.List<LearningKanji.ServiceReference1.KanjiObj>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class KanjiServiceClient : System.ServiceModel.ClientBase<LearningKanji.ServiceReference1.IKanjiService>, LearningKanji.ServiceReference1.IKanjiService {
         
         private BeginOperationDelegate onBeginGetListKanjiDelegate;
@@ -222,6 +246,12 @@ namespace LearningKanji.ServiceReference1 {
         private EndOperationDelegate onEndGetLessionNameDelegate;
         
         private System.Threading.SendOrPostCallback onGetLessionNameCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListKanjiByLessionIDDelegate;
+        
+        private EndOperationDelegate onEndGetListKanjiByLessionIDDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListKanjiByLessionIDCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -279,6 +309,8 @@ namespace LearningKanji.ServiceReference1 {
         public event System.EventHandler<GetListKanjiCompletedEventArgs> GetListKanjiCompleted;
         
         public event System.EventHandler<GetLessionNameCompletedEventArgs> GetLessionNameCompleted;
+        
+        public event System.EventHandler<GetListKanjiByLessionIDCompletedEventArgs> GetListKanjiByLessionIDCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -370,6 +402,52 @@ namespace LearningKanji.ServiceReference1 {
                 this.onGetLessionNameCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetLessionNameCompleted);
             }
             base.InvokeAsync(this.onBeginGetLessionNameDelegate, null, this.onEndGetLessionNameDelegate, this.onGetLessionNameCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult LearningKanji.ServiceReference1.IKanjiService.BeginGetListKanjiByLessionID(int lessionID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListKanjiByLessionID(lessionID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.Generic.List<LearningKanji.ServiceReference1.KanjiObj> LearningKanji.ServiceReference1.IKanjiService.EndGetListKanjiByLessionID(System.IAsyncResult result) {
+            return base.Channel.EndGetListKanjiByLessionID(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListKanjiByLessionID(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int lessionID = ((int)(inValues[0]));
+            return ((LearningKanji.ServiceReference1.IKanjiService)(this)).BeginGetListKanjiByLessionID(lessionID, callback, asyncState);
+        }
+        
+        private object[] OnEndGetListKanjiByLessionID(System.IAsyncResult result) {
+            System.Collections.Generic.List<LearningKanji.ServiceReference1.KanjiObj> retVal = ((LearningKanji.ServiceReference1.IKanjiService)(this)).EndGetListKanjiByLessionID(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListKanjiByLessionIDCompleted(object state) {
+            if ((this.GetListKanjiByLessionIDCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListKanjiByLessionIDCompleted(this, new GetListKanjiByLessionIDCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListKanjiByLessionIDAsync(int lessionID) {
+            this.GetListKanjiByLessionIDAsync(lessionID, null);
+        }
+        
+        public void GetListKanjiByLessionIDAsync(int lessionID, object userState) {
+            if ((this.onBeginGetListKanjiByLessionIDDelegate == null)) {
+                this.onBeginGetListKanjiByLessionIDDelegate = new BeginOperationDelegate(this.OnBeginGetListKanjiByLessionID);
+            }
+            if ((this.onEndGetListKanjiByLessionIDDelegate == null)) {
+                this.onEndGetListKanjiByLessionIDDelegate = new EndOperationDelegate(this.OnEndGetListKanjiByLessionID);
+            }
+            if ((this.onGetListKanjiByLessionIDCompletedDelegate == null)) {
+                this.onGetListKanjiByLessionIDCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListKanjiByLessionIDCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListKanjiByLessionIDDelegate, new object[] {
+                        lessionID}, this.onEndGetListKanjiByLessionIDDelegate, this.onGetListKanjiByLessionIDCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -469,6 +547,19 @@ namespace LearningKanji.ServiceReference1 {
             public System.Collections.Generic.Dictionary<int, string> EndGetLessionName(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.Generic.Dictionary<int, string> _result = ((System.Collections.Generic.Dictionary<int, string>)(base.EndInvoke("GetLessionName", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetListKanjiByLessionID(int lessionID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = lessionID;
+                System.IAsyncResult _result = base.BeginInvoke("GetListKanjiByLessionID", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.Generic.List<LearningKanji.ServiceReference1.KanjiObj> EndGetListKanjiByLessionID(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.Generic.List<LearningKanji.ServiceReference1.KanjiObj> _result = ((System.Collections.Generic.List<LearningKanji.ServiceReference1.KanjiObj>)(base.EndInvoke("GetListKanjiByLessionID", _args, result)));
                 return _result;
             }
         }

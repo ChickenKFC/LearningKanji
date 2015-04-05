@@ -26,4 +26,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetListKanjiByLessionID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lessionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListKanjiByLessionIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LearningKanji.Web" minOccurs="0" name="GetListKanjiByLessionIDResult" nillable="true" type="q3:ArrayOfKanjiObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

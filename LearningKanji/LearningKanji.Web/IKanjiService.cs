@@ -18,5 +18,8 @@ namespace LearningKanji.Web
 
         [OperationContract]
         Dictionary<int, string> GetLessionName();
+
+        [OperationContract]
+        List<KanjiObj> GetListKanjiByLessionID(int lessionID);
     }
 }
